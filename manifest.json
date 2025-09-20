@@ -1,14 +1,21 @@
 {
   "manifest_version": 3,
-  "name": "SeCU 实际费用插件",
-  "version": "1.0",
-  "description": "将账单页面中的 SeCU 预计费用转换为实际费用",
-  "permissions": ["activeTab", "scripting"],
+  "name": "SeCU实际费用插件",
+  "version": "1.1",
+  "description": "将预计费用转换为实际资源包抵扣费用，可配置折扣率",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
   "content_scripts": [
     {
-      "matches": ["*://yundun.console.aliyun.com/*"], 
-      "js": ["content.js"],
-      "run_at": "document_idle"
+      "matches": ["*://yundun.console.aliyun.com/*"],
+      "js": ["content.js"]
     }
   ]
 }
