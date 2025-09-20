@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "SeCU 实际费用插件",
+  "version": "1.0",
+  "description": "将账单页面中的 SeCU 预计费用转换为实际费用",
+  "permissions": ["activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["*://yundun.console.aliyun.com/*"], 
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
